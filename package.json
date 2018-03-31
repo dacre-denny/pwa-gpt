@@ -1,0 +1,36 @@
+{
+  "name": "pwa-gpt",
+  "version": "1.0.0",
+  "description": "Are you a good person?",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./node_modules/webpack/bin/webpack.js",
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mooce/pwa-gpt.git"
+  },
+  "keywords": [
+    "pwa",
+    "good",
+    "person",
+    "test"
+  ],
+  "author": "Dacre Denny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mooce/pwa-gpt/issues"
+  },
+  "homepage": "https://github.com/mooce/pwa-gpt#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.1.0",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
+  }
+}
