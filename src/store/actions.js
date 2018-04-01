@@ -12,3 +12,11 @@ export function answerQuestion(question, answer) {
         answer
     }
 }
+
+export function progress(question, answer) {
+    return {
+        type: 'ANSWER_QUESTION',
+        question,
+        answer
+    }
+}
