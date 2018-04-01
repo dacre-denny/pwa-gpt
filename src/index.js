@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
 
-const title = 'The good person test';
+import App from './app'
+import store from './store';
 
 ReactDOM.render(
-  <div>{title}</div>,
+  <Provider store={ store } >
+  <App />
+  </Provider>
+  ,
   document.getElementById('app')
 );
