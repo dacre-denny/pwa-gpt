@@ -1,37 +1,27 @@
-var path = require('path')
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var path = require('path');
 
 module.exports = {
-    entry: './src/scripts/app',
-    output: {
-        path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
-        filename: 'build.js'
-    },
-    devtool: 'source-map',
-    module: {
-        rules: [{
-            test: /\.(png|jpg|gif|svg)$/,
-            loader: 'file-loader',
-            options: {
-                name: '[name].[ext]?[hash]'
-            }
-        }, ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            publicPath: '/dist/',
-        })
+    entry: [
+      './src/index.js'
     ],
-    resolve: {},
+    module: {
+        rules: [
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: ['babel-loader']
+          }
+        ]
+      },
+      resolve: {
+        extensions: ['*', '.js', '.jsx']
+      },
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '/',
+      filename: 'bundle.js'
+    }, 
     devServer: {
-        index: 'index.html',
-        contentBase: [path.resolve(__dirname, './dist'), ],
-        watchContentBase: true
-    },
-    performance: {
-        hints: false
-    },
-};
+      contentBase: './', 
+    }
+  };
