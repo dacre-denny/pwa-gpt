@@ -1,7 +1,13 @@
-export function setAgeRange(range) {
+export function setAgeRange(age) {
     return {
         type: 'SET_AGE_RANGE',
-        range
+        age
+    }
+}
+
+export function startTest() {
+    return {
+        type: 'START_TEST',
     }
 }
 

@@ -1,14 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-import AgeSelection from './containers/age-selection'
+import AgeSelection from './age-selection'
+import Question from './question'
 
 const Container = class extends React.Component {
     render() {
         return <div>
-            <h1>Hello, this.props.name</h1>
-
-            <AgeSelection />
+          <h1>What about you?</h1>
+          <div>
+              <Link to={'/question'}>I'm a pretty good person</Link>
+              <Link to={'/judgement'}>I'm a terrible person!</Link>
+              <Link to={'/question'}>No sure</Link>
+          </div>            
         </div>
             ;
     }
@@ -32,9 +37,7 @@ const getView = (state) => {
     }
 }
 
-
-
-const RegContainer = connect(
+export default connect(
     state => ({ 
         screen : getView
     }),
@@ -42,5 +45,3 @@ const RegContainer = connect(
         start: () => dispatch(goto('age'))
     }),
 )(Container)
-
-export default RegContainer
