@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import AgeSelection from './age-selection'
-import Question from './question'
+import * as actions from '../store/actions'
 
 const Container = () =>
     (<div>
@@ -14,32 +13,11 @@ const Container = () =>
             <Link to='/what-about-you'>No</Link>
             <Link to='/what-about-you'>Some</Link>
         </div>
-
     </div>)
-
-const goto = (screen) => ({
-    type: 'NAV',
-    payload: screen
-})
-
-const getView = (state) => {
-    switch (state.screen) {
-
-        case 'age': {
-            return <AgeSelection />
-        }
-
-        default: {
-            return <div>dacre</div>
-        }
-    }
-}
 
 export default connect(
     state => ({
-        screen: getView
     }),
     dispatch => ({
-        start: () => dispatch(goto('age'))
     }),
 )(Container)
