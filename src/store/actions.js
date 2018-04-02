@@ -12,6 +12,7 @@ export function startTest() {
 }
 
 export function answerQuestion(question, answer) {
+    
     return {
         type: 'ANSWER_QUESTION',
         question,
@@ -23,6 +24,13 @@ export function progress(question, answer) {
     return {
         type: 'ANSWER_QUESTION',
         question,
+        answer
+    }
+}
+
+export function answerJudgement(answer) {
+    return {
+        type: 'ANSWER_JUDGEMENT',
         answer
     }
 }

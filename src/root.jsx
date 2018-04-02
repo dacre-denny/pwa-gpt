@@ -7,19 +7,20 @@ import Home from './containers/home'
 import Recognize from './containers/recognize'
 import WhatAboutYou from './containers/what-about-you'
 import Question from './containers/question'
+import Results from './containers/results'
+import Judgement from './containers/judgement'
+import Gospel from './containers/gospel'
 
-export default ({store}) => <Provider store={ store } >
-<Router>
-<div>
-    <ul>
-<li><Link to="/">Home</Link></li>
-        <li><Link to="/age">About</Link></li>
-        </ul>
-    <hr />
-  <Route path="/" component={ Home } />
-  <Route path="/recognize" component={Recognize} />
-  <Route path="/what-about-you" component={WhatAboutYou} />
-  <Route path="/question" component={Question} />
-</div>
-</Router>
+export default ({ store }) => <Provider store={store} >
+  <Router>
+    <div>
+      <Route exact path="/" component={Home} />
+      <Route path="/recognize" component={Recognize} />
+      <Route path="/what-about-you" component={WhatAboutYou} />
+      <Route path="/question/:number?" component={Question} />
+      <Route path="/results" component={Results} />
+      <Route path="/judgement" component={Judgement} />
+      <Route path="/gospel" component={Gospel} />
+    </div>
+  </Router>
 </Provider>;
