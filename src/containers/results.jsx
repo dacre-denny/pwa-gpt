@@ -5,12 +5,12 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import * as actions from '../store/actions'
 
 const component = ({ test }) => (<div>
-    <h3>Results</h3>
-    <div>
-        { test.map((question, key) => (<div key={key}>{ question.text } - { question.answer }</div>)) }
+    <div className="content">
+        <h3>Results</h3>
+        {test.map((question, key) => (<div key={key}>{question.text} - {question.answer}</div>))}
     </div>
-    <div>
-        <Link to={'/judgement'}>judgement</Link>
+    <div className="footer btn-group">
+        <Link to='/judgement' className="btn">The verdict..</Link>
     </div>
 </div>)
 

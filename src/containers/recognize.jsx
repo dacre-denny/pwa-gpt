@@ -6,12 +6,14 @@ import * as actions from '../store/actions'
 
 const Container = () =>
     (<div>
-        <h1>Recognize any of these people?</h1>
-        <p>Would you consider these to be good people?</p>
-        <div>
-            <Link to='/what-about-you'>Yes</Link>
-            <Link to='/what-about-you'>No</Link>
-            <Link to='/what-about-you'>Some</Link>
+        <div className="content">
+            <h1>Recognize any of these people?</h1>
+            <p>Would you consider these to be good people?</p>
+        </div>
+        <div className="footer btn-group">
+            <Link to='/what-about-you' className="btn">Yes</Link>
+            <Link to='/what-about-you' className="btn">No</Link>
+            <Link to='/what-about-you' className="btn">Some</Link>
         </div>
     </div>)
 

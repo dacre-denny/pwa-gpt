@@ -13,7 +13,7 @@ import Gospel from './containers/gospel'
 
 export default ({ store }) => <Provider store={store} >
   <Router>
-    <div>
+    <div className="screen-wrapper">
       <Route exact path="/" component={Home} />
       <Route path="/recognize" component={Recognize} />
       <Route path="/what-about-you" component={WhatAboutYou} />
