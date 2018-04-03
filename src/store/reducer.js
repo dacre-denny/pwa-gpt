@@ -3,7 +3,7 @@ const getQuestions = (age) => {
         default: {
 
             return [{
-                    image: '/0.jpg',
+                    image: '/img/lie.jpg',
                     text: 'Have you ever told a lie?',
                     answer: '',
                     verses: [
@@ -12,7 +12,7 @@ const getQuestions = (age) => {
 
                 },
                 {
-                    image: '/1.jpg',
+                    image: '/img/theft.jpg',
                     text: 'Have you ever stolen anything?',
                     answer: '',
                     verses: [

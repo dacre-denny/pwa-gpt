@@ -27,12 +27,23 @@ html, body {
 
     }
 
-    .content {
-flex:1;
-    }
+ 
+}
 
-    .footer {
+.content {
+    flex:1;
+
+    img {
+        max-width: 100%;
     }
+}
+
+
+.btn-stack {
+
+    flex-direction: column;
+    display: flex;
+    margin:0.5rem;
 }
 
 .btn-group {
