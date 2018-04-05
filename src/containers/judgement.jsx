@@ -8,11 +8,11 @@ const component = ({ test }) => (<div>
     <div className="content">
         <h3>Results</h3>
         <p>
-            If you were to appear before God would you be innocent or quilty?
-    </p>
+            If you're found guilty before God, would you be going to Heaven or Hell?
+        </p>
     </div>
     <div className="footer btn-group">
-        <Link to={'/gospel'} onClick={() => answer('heaven')} className="btn">Heaven</Link>
+        <Link to={'/innocent'} onClick={() => answer('heaven')} className="btn">Heaven</Link>
         <Link to={'/gospel'} onClick={() => answer('hell')} className="btn">Hell</Link>
     </div>
 </div>)

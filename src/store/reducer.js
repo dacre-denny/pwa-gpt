@@ -19,6 +19,15 @@ const getQuestions = (age) => {
                         'John 1:1 in the beginning was the Word',
                         'John 1:1 in the beginning was the Word'
                     ]
+                },
+                {
+                    image: '/img/theft.jpg',
+                    text: 'Have you ever stolen anything?',
+                    answer: '',
+                    verses: [
+                        'John 1:1 in the beginning was the Word',
+                        'John 1:1 in the beginning was the Word'
+                    ]
                 }
             ]
         }

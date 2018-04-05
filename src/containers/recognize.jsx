@@ -7,9 +7,22 @@ import * as actions from '../store/actions'
 const Container = () =>
     (<div>
         <div className="content">
-            <h1>Recognize any of these people?</h1>
-            <p>Would you consider these to be good people?</p>
+            <h1>Famous people</h1>
+            <p>Would you say these are "good" people?</p>
+
         </div>
+        <div className="scroll">
+
+            <div className="grid-tiles">
+                <div style={{ 'backgroundImage':'url(/img/beiber.jpg)' }}></div>
+                <div style={{ 'backgroundImage':'url(/img/hitler.jpg)' }}></div>
+                <div style={{ 'backgroundImage':'url(/img/jolie.jpg)' }}></div>
+                <div style={{ 'backgroundImage':'url(/img/obama.jpg)' }}></div>
+                <div style={{ 'backgroundImage':'url(/img/schwarzenegger.jpg)' }}></div>
+                <div style={{ 'backgroundImage':'url(/img/winfrey.jpg)' }}></div>
+            </div>
+        </div>
+
         <div className="footer btn-group">
             <Link to='/what-about-you' className="btn">Yes</Link>
             <Link to='/what-about-you' className="btn">No</Link>

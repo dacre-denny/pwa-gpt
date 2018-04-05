@@ -6,13 +6,15 @@ import * as actions from '../store/actions'
 
 const component = ({ dacre, next, question, answer }) => (<div>
     <div className="content">
+
+        <h2>Question:</h2>
         <h3>{question.text}</h3>
         <img src={question.image} alt={question.text} />
     </div>
     <div className="footer btn-group">
         <Link to={next} onClick={() => answer(question, 'yes')} className="btn">Yes</Link>
         <Link to={next} onClick={() => answer(question, 'no')} className="btn">No</Link>
-        <Link to={next} onClick={() => answer(question, 'unsure')} className="btn">Unsure</Link>
+        <Link to={next} onClick={() => answer(question, 'unsure')} className="btn">Not sure</Link>
     </div>
 </div>)
 

@@ -6,11 +6,16 @@ import * as actions from '../store/actions'
 
 const component = ({ test }) => (<div>
     <div className="content">
-        <h3>Results</h3>
-        {test.map((question, key) => (<div key={key}>{question.text} - {question.answer}</div>))}
+        <h1>The Verdict</h1>
+        <p>If you were to die tonight, and appear before the Judge of the Universe guilty of:</p>
+        <ul className="results">
+        {test.map((question, key) => (<li key={key}>{question.text} - {question.answer}<span className="yes"></span></li>))}
+        </ul>
+        <p>Do you think you would be found innocent or guilty?</p>
     </div>
     <div className="footer btn-group">
-        <Link to='/judgement' className="btn">The verdict..</Link>
+        <Link to={'/innocent'} onClick={() => answer('innocent')} className="btn">Innocent</Link>
+        <Link to={'/gospel'} onClick={() => answer('guilty')} className="btn">Guilty</Link>
     </div>
 </div>)
 

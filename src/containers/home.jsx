@@ -5,11 +5,8 @@ import { Link } from 'react-router-dom'
 import * as actions from '../store/actions'
 
 const component = ({ age, start }) => (<div>
-  <button>
-    Pick Age Group
-  </button>
   <div className="content">
-    <figure>The Good Person Test</figure>
+    <h1>The Good Person Test</h1>
     <small>Are you good enough?</small>
     <form>
       <label>Age group</label>
