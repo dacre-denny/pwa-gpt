@@ -2,43 +2,39 @@ $color-primary:#ecf8ff;
 $color-secondary:#a71e1e;
 $color-white:#ffffff;
 $color-alt:#11a2ce;
-
-$font-header: 'Shrikhand', cursive;
-$font-body: 'Lato', sans-serif;
-
-html, body {
+$font-header: 'Shrikhand',
+cursive;
+$font-body: 'Lato',
+sans-serif;
+html,
+body {
     margin: 0;
     padding: 0;
-
     width: 100%;
     height: 100%;
-
+    line-height: 1.5;
     font-family: $font-body;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: $font-header;
     font-weight: 100;
-    color:$color-secondary;
+    color: $color-secondary;
 }
 
 .grid-tiles {
     display: flex;
     flex-wrap: wrap;
-    
-    > * { 
-
+    >* {
         background-position: center;
         background-size: cover;
-
         width: 100%;
         margin-top: 2%;
-        
         width: 49%;
-        &:nth-child(odd) { 
-        margin-right: 2%;
+        &:nth-child(odd) {
+            margin-right: 2%;
         }
-        
         &:before {
             content: "";
             float: left;
@@ -51,71 +47,88 @@ h1, h2 {
     width: 100%;
     height: 100%;
     text-align: center;
-
-    color:$color-alt;
+    color: $color-alt;
     background-color: $color-primary;
 }
 
 .screen-wrapper {
-    
     height: 100%;
-    
-    > div {
-        justify-content: flex-start;
-        align-items: stretch;
-        align-content: stretch;
-    
+    padding: 0.5rem;
+    box-sizing: border-box;
+    >div {
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
-
     }
-
     .scroll {
         overflow-y: scroll;
     }
- 
 }
 
-.content { 
+.align-center {
+    width: 100%;
+    align-self: center;
+}
 
-    margin:0.5rem;
+.expand {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
-    img {
-        max-width: 100%;
-    }
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .results {
-
     list-style: none;
     padding: 0;
-
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    background: $color-white;
     li {
-        text-align: left;
+        display:flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0.5rem 0;
+        
+        span {
+            text-align: left;
+            flex:1;
+        }
+        .mdi { 
+            font-size: 1.25rem;
+            margin-left: .5rem;
+        }
     }
 }
 
 .btn-stack {
-
-    flex-direction: column;
-    display: flex;
-    margin:0.5rem;
+    .btn {
+        border-radius: 0;
+        display: block;
+        border-bottom: 1px solid darken($color-secondary, 6.125%);
+        &:first-child {
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+        }
+        &:last-child {
+            border-bottom-left-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom: none;
+        }
+    }
 }
 
 .btn-group {
     flex-direction: row;
     display: flex;
-    margin:0.5rem;
-
     .btn {
         border-radius: 0;
-
-        +.btn {
-            margin-left: 1px;
-        }
-
+        border-right: 1px solid darken($color-secondary, 6.125%);
         &:first-child {
             border-top-left-radius: 0.25rem;
             border-bottom-left-radius: 0.25rem;
@@ -123,21 +136,38 @@ h1, h2 {
         &:last-child {
             border-top-right-radius: 0.25rem;
             border-bottom-right-radius: 0.25rem;
+            border-right: none;
         }
     }
 }
 
 .btn {
-    display:block;
+    display: block;
     padding: 1rem;
-    flex:1;
-
+    flex: 1;
     line-height: 1;
     min-height: 1rem;
-
     color: $color-white;
     background: $color-secondary;
     border-radius: 0.25rem;
     text-decoration: none;
+    &:hover {
+        background: lighten($color-secondary, 6.125%);
+    }
+}
 
+.cancel {
+    position: fixed;
+    top: .5rem;
+    right: .5rem;
+    font-size: 2rem;
+    line-height: 1;
+    background-color: transparentize( $color-alt, 0.5);
+    color: $color-white;
+    border-radius: 3rem;
+}
+
+.hr {
+    display: block;
+    padding: 1.5rem 0.5rem;
 }

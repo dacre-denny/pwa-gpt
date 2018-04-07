@@ -6,14 +6,20 @@ import AgeSelection from './age-selection'
 import Question from './question'
 
 const Container = () => (<div>
-    <div className="content">
-        <h1>What about you?</h1>
-        <div className="btn-stack">
-            <Link to='/question' className="btn">I'm a good person</Link>
-            <Link to='/judgement' className="btn">I'm a terrible person!</Link>
-            <Link to='/question' className="btn">No sure</Link>
-        </div>
+    <div>
+    <h1>What about you?</h1> 
     </div>
+    <div className="expand">
+        <p>I think I am:</p>
+        <div className="btn-stack">
+            <Link to='/test/question' className="btn">Perfect</Link>
+            <Link to='/test/question' className="btn">A good person</Link>
+            <Link to='/test/question' className="btn">Somewhere in between</Link>
+            <Link to='/test/judgement' className="btn">A bit bad</Link>
+            <Link to='/test/judgement' className="btn">A terrible person!</Link>
+            <Link to='/test/question' className="btn">Not sure</Link>
+        </div> 
+    </div> 
 </div>);
 
 export default connect(

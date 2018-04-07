@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import * as actions from '../store/actions'
 
 const component = ({ age, start }) => (<div>
-  <div className="content">
+  <div className="expand center">
     <h1>The Good Person Test</h1>
     <small>Are you good enough?</small>
     <form>
@@ -25,7 +25,7 @@ const component = ({ age, start }) => (<div>
     </form>
   </div>
   <div className="footer btn-group">
-    <Link to='/recognize' onClick={() => start()} className="btn">Take the test</Link>
+    <Link to='/test/start' onClick={() => start()} className="btn">Take the test</Link>
   </div>
 </div>)
 

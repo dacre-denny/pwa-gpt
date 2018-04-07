@@ -6,13 +6,11 @@ import * as actions from '../store/actions'
 
 const Container = () =>
     (<div>
-        <div className="content">
+        <div>
             <h1>Famous people</h1>
             <p>Would you say these are "good" people?</p>
-
         </div>
-        <div className="scroll">
-
+        <div className="expand scroll">
             <div className="grid-tiles">
                 <div style={{ 'backgroundImage':'url(/img/beiber.jpg)' }}></div>
                 <div style={{ 'backgroundImage':'url(/img/hitler.jpg)' }}></div>
@@ -22,11 +20,10 @@ const Container = () =>
                 <div style={{ 'backgroundImage':'url(/img/winfrey.jpg)' }}></div>
             </div>
         </div>
-
         <div className="footer btn-group">
-            <Link to='/what-about-you' className="btn">Yes</Link>
-            <Link to='/what-about-you' className="btn">No</Link>
-            <Link to='/what-about-you' className="btn">Some</Link>
+            <Link to='/test/what-about-you' className="btn">Yes</Link>
+            <Link to='/test/what-about-you' className="btn">No</Link>
+            <Link to='/test/what-about-you' className="btn">Some</Link>
         </div>
     </div>)
 

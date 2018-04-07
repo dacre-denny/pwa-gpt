@@ -11,12 +11,13 @@ export function startTest() {
     }
 }
 
-export function answerQuestion(question, answer) {
+export function answerQuestion(question, guilty) {
     
+ 
     return {
         type: 'ANSWER_QUESTION',
         question,
-        answer
+        guilty
     }
 }
 

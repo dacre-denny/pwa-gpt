@@ -5,18 +5,20 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import * as actions from '../store/actions'
 
 const component = ({ test }) => (<div>
-    <div className="content">
-        <h3>The Good Judge</h3>
+    <div>
+        <h1>The Good Judge</h1>
+        <h3>Can a good judge let a criminal go free?</h3>
+    </div>
+    <div className="expand">
         <p>
-            Can a good judge let a criminal go free?
-            <br />Of course not!
-            <br />A good judge will uphold the Law and require justice to be served.
-            <br />
-            <br />In the same way that breaking civil law makes us criminals, breaking God's Law makes us guilty before Him.
+            <b>Of course not!</b> A good judge will uphold the Law and require justice to be served.
+        </p>
+        <p>
+            In the same way that breaking civil law makes us criminals, breaking God's Law makes us guilty before Him.
         </p>
     </div>
     <div className="footer btn-group">
-        <Link to={'/judgement'} onClick={() => answer('guilty')} className="btn">Judgement</Link>
+        <Link to={'/test/guilty'} className="btn">Judgement</Link>
     </div>
 </div>)
 
