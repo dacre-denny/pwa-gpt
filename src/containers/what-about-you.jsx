@@ -2,23 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import AgeSelection from './age-selection'
-import Question from './question'
-
-const Container = () => (<div>
+const Container = ({ startTest }) => (<div>
     <div>
     <h1>What about you?</h1> 
+    <h3>Would you consider yourself to be a good person?</h3>
     </div>
     <div className="expand">
-        <p>I think I am:</p>
         <div className="btn-stack">
-            <Link to='/test/question' className="btn">Perfect</Link>
-            <Link to='/test/question' className="btn">A good person</Link>
-            <Link to='/test/question' className="btn">Somewhere in between</Link>
-            <Link to='/test/judgement' className="btn">A bit bad</Link>
-            <Link to='/test/judgement' className="btn">A terrible person!</Link>
-            <Link to='/test/question' className="btn">Not sure</Link>
+            <Link to='/test/good-enough' className="btn" >I'm Perfect!</Link>
+            <Link to='/test/good-enough' className="btn" >I'm a good person</Link>
+            <Link to='/test/good-enough' className="btn" >I'm somewhere in between</Link>
+            <Link to='/test/good-enough' className="btn" >I'm on the bad side</Link>
+            <Link to='/test/good-enough' className="btn" >I'm a terrible person!</Link>
         </div> 
+    <hr />
+        <Link to='/test/good-enough' className="btn">I'm not sure</Link>
     </div> 
 </div>);
 
@@ -26,6 +24,6 @@ export default connect(
     state => ({
     }),
     dispatch => ({
-        start: () => dispatch(goto('age'))
+        
     }),
 )(Container)

@@ -4,25 +4,29 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import * as actions from '../store/actions'
 
-const component = ({ test }) => (<div>
+const component = ({ guiltyCount }) => (<div>
     <div>
         <h1>The Good Judge</h1>
         <h3>Can a good judge let a criminal go free?</h3>
+        <img className="align-center" src='/img/justice.jpg' />
     </div>
     <div className="expand">
         <p>
-            <b>Of course not!</b> A good judge will uphold the Law and require justice to be served.
+            A good judge must uphold the Law - justice must be served!
         </p>
+        {
+            (guiltyCount > 0) ? <i className="emphasise">Remember you just admitted to breaking { guiltyCount } of God's moral law{ guiltyCount > 1 ? 's' :'' }?</i> : null
+        }        
         <p>
-            In the same way that breaking civil law makes us criminals, breaking God's Law makes us guilty before Him.
+            Just as breaking civil law makes us criminals, breaking God's Law makes us guilty before Him...
         </p>
     </div>
     <div className="footer btn-group">
-        <Link to={'/test/guilty'} className="btn">Judgement</Link>
+        <Link to={'/test/guilty'} className="btn">Judgement Day</Link>
     </div>
 </div>)
 
 export default connect(state => ({
-    test: state.test,
+    guiltyCount : state.test.filter(({ guilty }) => guilty).length,
 }), dispatch => ({
 }))(component)

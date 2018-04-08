@@ -1,4 +1,4 @@
-export function setAgeRange(age) {
+export function setTestAge(age) {
     return {
         type: 'SET_AGE_RANGE',
         age
@@ -6,11 +6,12 @@ export function setAgeRange(age) {
 }
 
 export function startTest() {
+    
+ 
     return {
-        type: 'START_TEST',
+        type: 'RESET_TEST',
     }
 }
-
 export function answerQuestion(question, guilty) {
     
  

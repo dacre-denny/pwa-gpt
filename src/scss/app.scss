@@ -1,7 +1,7 @@
-$color-primary:#ecf8ff;
-$color-secondary:#a71e1e;
+$color-primary:rgb(0, 10, 39);
+$color-secondary:#32fd71;
 $color-white:#ffffff;
-$color-alt:#11a2ce;
+$color-alt:#fd3286;
 $font-header: 'Shrikhand',
 cursive;
 $font-body: 'Lato',
@@ -14,6 +14,8 @@ body {
     height: 100%;
     line-height: 1.5;
     font-family: $font-body;
+    background: url(/img/background-2.jpg) center no-repeat;
+    background-size: cover;
 }
 
 h1,
@@ -21,6 +23,7 @@ h2 {
     font-family: $font-header;
     font-weight: 100;
     color: $color-secondary;
+    text-shadow: black 0 0 5px;
 }
 
 .grid-tiles {
@@ -47,8 +50,8 @@ h2 {
     width: 100%;
     height: 100%;
     text-align: center;
-    color: $color-alt;
-    background-color: $color-primary;
+    color: $color-white;
+    background-color: transparentize($color-primary,0.25);
 }
 
 .screen-wrapper {
@@ -71,6 +74,17 @@ h2 {
     align-self: center;
 }
 
+.test-wrapper {
+    flex: 1;
+    display: flex;
+    >div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .expand {
     flex: 1;
     display: flex;
@@ -88,12 +102,13 @@ h2 {
     padding: 0;
     margin: 1rem 0;
     padding: 0.5rem 1rem;
-    background: $color-white;
+    background: $color-primary;
     li {
         display:flex;
         flex-direction: row;
         align-items: flex-start;
         padding: 0.5rem 0;
+        color: $color-alt;
         
         span {
             text-align: left;
@@ -106,19 +121,62 @@ h2 {
     }
 }
 
+ol {
+    padding-left: 0;
+    list-style: none;
+    li {
+        text-align: left;
+        padding-left: 2rem;
+        position: relative;
+        
+   counter-increment: item;
+
+        &:before {
+            font-size: 0.85rem;
+            content: counter(item);
+            background: $color-alt;
+            border-radius: 100%;
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            text-align: center;
+            top:0.25rem;
+            left:0;
+            line-height: 1.85;
+            display: block;
+            position: absolute;
+          }
+    }
+}
+
 .btn-stack {
     .btn {
         border-radius: 0;
         display: block;
         border-bottom: 1px solid darken($color-secondary, 6.125%);
+
+        &:after {
+            content: '';
+            display: block;
+            height: 1px; 
+            position: relative;
+            background: transparentize($color-primary, 0.7);
+            position: absolute;
+            left:0.65rem;
+            right: 0.65rem;
+            bottom:0;
+        }
+
         &:first-child {
-            border-top-left-radius: 0.25rem;
-            border-top-right-radius: 0.25rem;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
         }
         &:last-child {
-            border-bottom-left-radius: 0.25rem;
-            border-bottom-right-radius: 0.25rem;
-            border-bottom: none;
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            &:after {
+                content: none;
+            }
         }
     }
 }
@@ -127,32 +185,77 @@ h2 {
     flex-direction: row;
     display: flex;
     .btn {
+
+
+        &:after {
+            content: '';
+            display: block;
+            width:1px; 
+            position: relative;
+            background: transparentize($color-primary, 0.7);
+            position: absolute;
+            top:0.65rem;
+            bottom: 0.65rem;
+            right:0;
+        }
+
         border-radius: 0;
-        border-right: 1px solid darken($color-secondary, 6.125%);
         &:first-child {
-            border-top-left-radius: 0.25rem;
-            border-bottom-left-radius: 0.25rem;
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
         }
         &:last-child {
-            border-top-right-radius: 0.25rem;
-            border-bottom-right-radius: 0.25rem;
-            border-right: none;
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            &:after {
+                content: none;
+            }
         }
     }
 }
 
+.radio-group {
+    
+    flex-direction: column;
+    display: flex;
+
+    input {
+        display: none;
+
+        &:checked + label {
+            background: $color-white;
+            color:$color-primary;
+        }
+    }
+
+    label { 
+        color: $color-white;
+        background:#1b233a;
+        padding: 0.5rem;
+        border-radius: 2rem;
+        font-size: 1rem;
+        text-transform: uppercase;
+        flex:1;
+        margin:0.25rem;
+    }
+}
+
 .btn {
+    font-size: 1rem;
+    text-transform: uppercase;
+    position: relative;
     display: block;
-    padding: 1rem;
+    padding: 1rem 0;
     flex: 1;
     line-height: 1;
     min-height: 1rem;
-    color: $color-white;
+    color: $color-primary;
     background: $color-secondary;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     text-decoration: none;
+    cursor: pointer;
     &:hover {
-        background: lighten($color-secondary, 6.125%);
+        background: lighten($color-secondary, 10.125%);
     }
 }
 
@@ -160,14 +263,71 @@ h2 {
     position: fixed;
     top: .5rem;
     right: .5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1;
-    background-color: transparentize( $color-alt, 0.5);
     color: $color-white;
     border-radius: 3rem;
+    z-index: 1000;
 }
 
 .hr {
     display: block;
     padding: 1.5rem 0.5rem;
+}
+
+hr {
+    display: block;
+    
+    background-color: transparentize($color-white,0.25);
+    
+    height:1px;
+    border:none;
+    margin: 1.5rem 0.65rem;
+}
+
+.quote {
+    background: $color-white;
+    display: block;
+    color: #030f2f;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-bottom-right-radius: 0;
+    position: relative;
+    margin-bottom: 2.5rem;
+    text-align: left;
+    font-size: 0.85rem;
+    sub {
+        color: $color-white;
+        position: absolute;
+        bottom: -1.25rem;
+        left:0.5rem;
+        text-align: right;
+        opacity: 0.5;
+        font-style: normal;
+        text-transform: uppercase;
+    }
+
+    &:after {
+        content:'';
+        display: block;
+        width:0rem;
+        height:0rem; 
+        position: absolute;
+        bottom:-1rem;
+        right:0;
+
+        border:1rem solid transparent;
+        border-right-color:$color-white;
+        border-top-width: 0;
+    }
+}
+
+.emphasise {
+    display: block;
+    background: #fff6b8;
+    color:$color-primary;
+    padding:0.5rem;
+    border-radius: 0.5rem;
+    margin:0.5rem 0;
+
 }

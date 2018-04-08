@@ -4,25 +4,37 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import * as actions from '../store/actions'
 
-const Row = ({ question : {text, guilty} }) => (<li>
-    <span>{text}</span><i className={ `mdi ${ guilty ? 'mdi-close-circle' : 'mdi-checkbox-blank-circle-outline' }` }></i>
+const Row = ({ question: { text, guilty } }) => (<li>
+    <span>{text}</span><b>{ guilty ? 'yes' : 'no'}</b>
 </li>)
+
+const Summary = ({ test }) => (test.some(({ guilty }) => guilty) ?
+<div>
+    <p>
+    You answered yes to some of these questions - what's the verdict?
+    </p>
+    <div className="footer btn-group">
+        <Link to={'/test/judgement'} className="btn">Let's find out</Link>
+    </div>
+</div> :
+<div>
+    <p>That doesn't seem right!</p>
+    <div className="footer btn-group">
+        <Link to={'/test/what-about-you'} className="btn">Try again</Link>
+    </div>
+</div>)
 
 const Component = ({ test }) => (<div>
     <div>
-        <h1>The Verdict</h1>
-        <p>If you were to die tonight, and appear before the Judge of the Universe guilty of:</p>
+        <h2>The results are in,</h2>
+        
     </div>
     <div className="expand">
         <ul className="results">
-        {test.map((question, key) => (<Row key={key} question={question} />))}
+            {test.map((question, key) => (<Row key={key} question={question} />))}
         </ul>
-        <p>Based on these results, do you think you would be innocent or guilty?</p>
     </div>
-    <div className="footer btn-group">
-        <Link to={'/test/innocent'} className="btn">Innocent</Link>
-        <Link to={'/test/guilty'} className="btn">Guilty</Link>
-    </div>
+    <Summary test={test} />
 </div>)
 
 export default connect(state => ({

@@ -1,84 +1,152 @@
 const getQuestions = (age) => {
     switch (age) {
-        default: {
-
+        case 'teenager': {
             return [{
-                    image: '/img/lie.jpg',
-                    text: 'Have you ever told a lie?',
-                    guilty: false,
-                    verses: [
-                        'John 1:1 in the beginning was the Word'
-                    ]
-                    
-                },
-                {
-                    image: '/img/theft.jpg',
-                    text: 'Have you ever stolen anything?',
-                    guilty: false,
-                    verses: [
-                        'John 1:1 in the beginning was the Word',
-                        'John 1:1 in the beginning was the Word'
-                    ]
-                },
-                {
-                    image: '/img/lust.jpg',
-                    text: 'Have you looked at someone with lust?',
-                    guilty: false,
-                    verses: [
-                        'John 1:1 in the beginning was the Word',
-                        'John 1:1 in the beginning was the Word'
-                    ]
-                },
-                {
-                    image: '/img/hate.jpg',
-                    text: 'Have you ever felt anger or hatred towards someone?',
-                    guilty: false,
-                    verses: [
-                        'John 1:1 in the beginning was the Word',
-                        'John 1:1 in the beginning was the Word'
-                    ]
-                }
-            ]
+                image: '/img/teen-lie.jpg',
+                text: 'Have you ever told a lie?',
+                guilty: false,
+                verses: [
+                    'John 1:1 in the beginning was the Word'
+                ]
+
+            },
+            {
+                image: '/img/teen-theft.jpg',
+                text: 'Have you ever stolen anything?',
+                guilty: true,
+                verses: [
+                    'John 1:1 in the beginning was the Word',
+                    'John 1:1 in the beginning was the Word'
+                ]
+            },
+            {
+                image: '/img/teen-lust.jpg',
+                text: 'Have you looked at someone with lust?',
+                guilty: false,
+                verses: [
+                    'John 1:1 in the beginning was the Word',
+                    'John 1:1 in the beginning was the Word'
+                ]
+            },
+            {
+                image: '/img/teen-hate.jpg',
+                text: 'Have you ever felt anger or hatred towards someone?',
+                guilty: true,
+                verses: [
+                    'John 1:1 in the beginning was the Word',
+                    'John 1:1 in the beginning was the Word'
+                ]
+            }
+        ]
+        }
+        case 'adult': {
+            return [{
+                image: '/img/adult-lie.jpg',
+                text: 'Have you ever told a lie?',
+                guilty: false,
+                verses: [
+                    'John 1:1 in the beginning was the Word'
+                ]
+
+            },
+            {
+                image: '/img/adult-theft.jpg',
+                text: 'Have you ever stolen anything?',
+                guilty: true,
+                verses: [
+                    'John 1:1 in the beginning was the Word',
+                    'John 1:1 in the beginning was the Word'
+                ]
+            },
+            {
+                image: '/img/adult-lust.jpg',
+                text: 'Have you looked at someone with lust?',
+                guilty: false,
+                verses: [
+                    'John 1:1 in the beginning was the Word',
+                    'John 1:1 in the beginning was the Word'
+                ]
+            },
+            {
+                image: '/img/adult-hate.jpg',
+                text: 'Have you ever felt anger or hatred towards someone?',
+                guilty: true,
+                verses: [
+                    'John 1:1 in the beginning was the Word',
+                    'John 1:1 in the beginning was the Word'
+                ]
+            }
+        ]
+        }
+        default:
+        case 'child': {
+            return [{
+                image: '/img/child-lie.jpg',
+                text: 'Have you ever told a lie?',
+                guilty: false,
+                verses: [
+                    'John 1:1 in the beginning was the Word'
+                ]
+
+            },
+            {
+                image: '/img/child-stealing.jpg',
+                text: 'Have you ever stolen anything?',
+                guilty: true,
+                verses: [
+                    'John 1:1 in the beginning was the Word',
+                    'John 1:1 in the beginning was the Word'
+                ]
+            },
+            {
+                image: '/img/child-discipline.jpg',
+                text: 'Have you disobeyed your parents?',
+                guilty: false,
+                verses: [
+                    'John 1:1 in the beginning was the Word',
+                    'John 1:1 in the beginning was the Word'
+                ]
+            },
+            {
+                image: '/img/child-angry.jpg',
+                text: 'Have you ever felt anger or hatred towards someone?',
+                guilty: true,
+                verses: [
+                    'John 1:1 in the beginning was the Word',
+                    'John 1:1 in the beginning was the Word'
+                ]
+            }
+        ]
         }
     }
 }
 
 const initial = {
-    age: 0,
+    age: 'child',
     phone_number: '',
-    next_url : '/test/question',
-    test: getQuestions(),
+    test: getQuestions('child'),
     index: 0,
-    concluded: false
+    questions_complete: false
 }
 
 export default (state = initial, action) => {
 
     switch (action.type) {
 
-        case '@@redux/INIT':
-            {
-                return {
-                    ...state,
-                    test: getQuestions(state.age),
-                }
-            }
-
         case 'SET_AGE_RANGE':
             {
                 return {
                     ...state,
-                    test: getQuestions(state.age),
-                    age: action.age
-
+                    age: action.age,
                 }
             }
 
-        case 'START_TEST':
-            {
+        case 'RESET_TEST':
+            { 
                 return {
                     ...state,
-                    question_index: 0
+                    test: getQuestions(state.age),
+                    index: 0,
 
                 }
             }
@@ -93,12 +161,12 @@ export default (state = initial, action) => {
                 }
 
                 index = Math.min(index + 1, test.length - 1)
-                
+
                 state.questions_complete = (index >= test.length - 1)
                 return {
                     ...state,
                     test,
-                    index : index
+                    index: index
                 }
                 break;
             }

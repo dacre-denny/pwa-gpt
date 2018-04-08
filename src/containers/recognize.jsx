@@ -8,7 +8,9 @@ const Container = () =>
     (<div>
         <div>
             <h1>Famous people</h1>
-            <p>Would you say these are "good" people?</p>
+            <p>Do you recognize these people? 
+                <br/>
+                Would you say these are good people?</p>
         </div>
         <div className="expand scroll">
             <div className="grid-tiles">
@@ -23,7 +25,7 @@ const Container = () =>
         <div className="footer btn-group">
             <Link to='/test/what-about-you' className="btn">Yes</Link>
             <Link to='/test/what-about-you' className="btn">No</Link>
-            <Link to='/test/what-about-you' className="btn">Some</Link>
+            <Link to='/test/what-about-you' className="btn">Not sure</Link>
         </div>
     </div>)
 

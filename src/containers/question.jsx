@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import * as actions from '../store/actions'
 
-const component = ({ dacre, next, question, answer }) => (<div>
+const component = ({ next, question, answer }) => (<div>
     <div>
         <h2>Question:</h2>
         <h3>{question.text}</h3>
@@ -16,7 +16,6 @@ const component = ({ dacre, next, question, answer }) => (<div>
     <div className="footer btn-group">
         <Link to={next} onClick={() => answer(question, true)} className="btn">Yes</Link>
         <Link to={next} onClick={() => answer(question, false)} className="btn">No</Link>
-        <Link to={next} onClick={() => answer(question)} className="btn">Not sure</Link>
     </div>
 </div>)
 

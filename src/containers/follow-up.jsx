@@ -19,5 +19,5 @@ const component = ({ age, start }) => (<div>
 export default connect(state => ({
   age: state.age
 }), dispatch => ({
-  start: () => dispatch(actions.startTest()),
+  
 }))(component)
