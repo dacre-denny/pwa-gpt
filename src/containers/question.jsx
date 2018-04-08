@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import * as actions from '../store/actions'
 
-const component = ({ next, question, answer }) => (<div>
+const component = ({ percent, next, question, answer }) => (<div>
     <div>
+        <progress value={ percent } max="100">{ percent }%</progress>
         <h2>Question:</h2>
         <h3>{question.text}</h3>
     </div>
@@ -20,8 +21,9 @@ const component = ({ next, question, answer }) => (<div>
 </div>)
 
 export default connect(state => ({
-    next: state.questions_complete ? '/test/results' : '/test/question',
-    question: state.test[state.index]
+    percent: (100.0 * state.index / state.test.length).toFixed(1),
+    next: (state.index >= state.test.length - 1) ? '/test/results' : '/test/question',
+    question: state.test[ Math.max(0, state.index) ]
 }), dispatch => ({
     answer: (question, answer) => dispatch(actions.answerQuestion(question, answer)),
 }))(component)

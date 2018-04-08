@@ -15,14 +15,14 @@ const component = ({ guiltyCount }) => (<div>
             A good judge must uphold the Law - justice must be served!
         </p>
         {
-            (guiltyCount > 0) ? <i className="emphasise">Remember you just admitted to breaking { guiltyCount } of God's moral law{ guiltyCount > 1 ? 's' :'' }?</i> : null
+            (guiltyCount > 0) ? <i className="emphasise">During the test, you admitted to breaking { guiltyCount } of God's moral law{ guiltyCount > 1 ? 's' :'' }?</i> : null
         }        
         <p>
-            Just as breaking civil law makes us criminals, breaking God's Law makes us guilty before Him...
+            Just as breaking civil law makes us a criminal, breaking God's Law makes us guilty before Him...
         </p>
     </div>
     <div className="footer btn-group">
-        <Link to={'/test/guilty'} className="btn">Judgement Day</Link>
+        <Link to={'/test/judgement'} className="btn">Back to Judgement Day</Link>
     </div>
 </div>)
 

@@ -125,23 +125,24 @@ ol {
     padding-left: 0;
     list-style: none;
     li {
-        text-align: left;
-        padding-left: 2rem;
+        padding-left: 0;
+        padding-top: 3rem;
         position: relative;
         
    counter-increment: item;
 
         &:before {
-            font-size: 0.85rem;
+            font-size: 1.25rem;
             content: counter(item);
             background: $color-alt;
             border-radius: 100%;
             color: white;
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
             text-align: center;
+            margin-left:-1.25rem;
             top:0.25rem;
-            left:0;
+            left:50%;
             line-height: 1.85;
             display: block;
             position: absolute;
@@ -277,12 +278,11 @@ ol {
 
 hr {
     display: block;
-    
-    background-color: transparentize($color-white,0.25);
-    
-    height:1px;
+        
+    height:0px;
     border:none;
-    margin: 1.5rem 0.65rem;
+    border-bottom: solid 1px transparentize($color-white,0.75);
+    margin: 2.5rem 3rem;
 }
 
 .quote {
@@ -293,6 +293,7 @@ hr {
     border-radius: 0.5rem;
     border-bottom-right-radius: 0;
     position: relative;
+    margin:1rem;
     margin-bottom: 2.5rem;
     text-align: left;
     font-size: 0.85rem;

@@ -9,9 +9,17 @@ export function startTest() {
     
  
     return {
-        type: 'RESET_TEST',
+        type: 'START_TEST',
     }
 }
+export function endTest() {
+    
+ 
+    return {
+        type: 'END_TEST',
+    }
+}
+
 export function answerQuestion(question, guilty) {
     
  

@@ -6,24 +6,36 @@ import Question from './question'
 
 import * as actions from '../store/actions'
 
-const Container = ({ startTest }) => (<div>
+const Container = ({ startTest, showStart }) => (<div>
     <div>
     <h1>Are you good enough?</h1> 
-    <h3>If there is a Heaven, do think you're going?</h3>
+    <h3>Suppose there is a Heaven - do think you're good enough to go there when you die?</h3>
     </div>
     <div className="expand">
-        <div className="btn-stack">
-            <Link to='/test/question' className="btn" onClick={ () => startTest() } >Yes for sure!</Link>
-            <Link to='/test/question' className="btn" onClick={ () => startTest() }>Pretty sure</Link>
-            <Link to='/test/question' className="btn" onClick={ () => startTest() }>Not sure</Link>
-            <Link to='/test/judgement' className="btn" onClick={ () => startTest() }>Probably not</Link>
-            <Link to='/test/judgement' className="btn" onClick={ () => startTest() }>Definitely not</Link>
+        <div className="radio-group">
+            <input name="good-enough" id="opt-1" type="radio" onClick={()=> startTest()} />
+            <label htmlFor="opt-1">Yes for sure!</label>
+            <input name="good-enough" id="opt-2" type="radio" onClick={()=> startTest()} />
+            <label htmlFor="opt-2">Pretty sure</label>
+            <input name="good-enough" id="opt-3" type="radio" onClick={()=> startTest()} />
+            <label htmlFor="opt-3">Not sure</label>
+            <input name="good-enough" id="opt-4" type="radio" onClick={()=> startTest()} />
+            <label htmlFor="opt-4">Probably not</label>
+            <input name="good-enough" id="opt-5" type="radio" onClick={()=> startTest()} />
+            <label htmlFor="opt-5">Definitely not</label>
         </div> 
+        { showStart &&
+        <div>
+            <p>See how you go:</p>
+            <Link to='/test/question' className="btn" >Take the Good Person Test!</Link>
+        </div> }
+
     </div> 
 </div>);
 
 export default connect(
     state => ({
+        showStart: state.index === 0
     }),
     dispatch => ({
         startTest: (question, answer) => dispatch(actions.startTest()),

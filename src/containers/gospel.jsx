@@ -32,28 +32,30 @@ const component = ({ test }) => (<div>
             <i className="quote">
             All liars, shall have their part in the lake which burneth with fire and brimstone: which is the second death.<sub>Revelation 21:8</sub>
             </i>
-
-            <hr/>
-
             <p>
                 Justice must be served - the punishment for your sin must be paid. 
                 </p>
-                <h3>
-                The good new: God provided a Way for you to avoid the eternal penalty of sin - God has thrown you a life line.
+
+            <hr/>
+<p>
+                The good news: God provided a Way for you to avoid the eternal penalty of sin.
+                </p>
+                <h3> God has thrown you a life line.
                 </h3>
             <img className="align-center" src='/img/lifeline.jpg' />
             <i className="quote">
             But God demonstrates His own love toward us, in that while we were still sinners, Christ died for us <sub>Romans 5:8</sub>
             </i>
-            <p>
-                Jesus died to take the penalty for your sin, so you can go free.
-            </p>
             <hr/>
-            <h3>What must you do to be saved?</h3>
+            <h3>
+                Jesus suffered and died, taking the penalty you deserve for your sin.
+            </h3>
+            <p>You did the crime, Jesus has paid the fine.</p>
             <img className="align-center" src='/img/blood.jpg' />
+            <h3>What must you do to be saved?</h3>
             <ol>
                 <li>
-                    <p>Achknowledge what Jesus has done on your behalf. You did the crime, Jesus has paid the fine.</p>
+                    <p>Achknowledge what Jesus has done on your behalf.</p>
                     <i className="quote">
                     [Jesus] in whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace <sub>Ephesians 1:7</sub>
                     </i>
