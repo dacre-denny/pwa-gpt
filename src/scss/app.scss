@@ -14,7 +14,7 @@ body {
     height: 100%;
     line-height: 1.5;
     font-family: $font-body;
-    background: url(/img/background-2.jpg) center no-repeat;
+    background: url(/img/background.jpg) center no-repeat;
     background-size: cover;
 }
 
@@ -24,6 +24,35 @@ h2 {
     font-weight: 100;
     color: $color-secondary;
     text-shadow: black 0 0 5px;
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+h3 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+img {
+    height: auto;
+    width:100%;
+}
+
+.progress {
+    background: #22346b;
+    height:0.5rem;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    span {
+        height:0.5rem;
+        display: block;
+        float: left;
+        background:$color-secondary;
+    }
 }
 
 .grid-tiles {
@@ -54,12 +83,10 @@ h2 {
     background-color: transparentize($color-primary,0.25);
 }
 
-.screen-wrapper {
+.wrapper {
     height: 100%;
-    padding: 0.5rem;
     box-sizing: border-box;
-    >div {
-        width: 100%;
+    >div { 
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -74,7 +101,7 @@ h2 {
     align-self: center;
 }
 
-.test-wrapper {
+.test {
     flex: 1;
     display: flex;
     >div {
@@ -85,10 +112,15 @@ h2 {
     }
 }
 
-.expand {
+.content {
+    padding: 0.5rem;
     flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+.footer {
+    padding:0.5rem;
 }
 
 .center {
@@ -110,14 +142,37 @@ h2 {
         padding: 0.5rem 0;
         color: $color-alt;
         
+        
         span {
             text-align: left;
             flex:1;
         }
-        .mdi { 
-            font-size: 1.25rem;
-            margin-left: .5rem;
+        b { 
+            text-transform: uppercase;
         }
+    }
+}
+
+form {
+    label, input, button {
+        display: block;
+        width: 100%;
+        padding: 0.5rem;
+        min-height:2.75rem;
+        box-sizing: border-box;
+        border:none;
+        font-family: $font-body; 
+        margin-bottom: 0.5rem;
+    }
+    input {
+        text-align: left;
+    }
+    label {
+        margin-bottom: 0rem;
+}
+
+    button.btn {
+        background: $color-alt;
     }
 }
 
@@ -255,6 +310,7 @@ ol {
     border-radius: 0.5rem;
     text-decoration: none;
     cursor: pointer;
+
     &:hover {
         background: lighten($color-secondary, 10.125%);
     }
@@ -286,7 +342,7 @@ hr {
 }
 
 .quote {
-    background: $color-white;
+    background: #dedede;
     display: block;
     color: #030f2f;
     padding: 0.5rem;
@@ -294,7 +350,7 @@ hr {
     border-bottom-right-radius: 0;
     position: relative;
     margin:1rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.75rem;
     text-align: left;
     font-size: 0.85rem;
     sub {
@@ -318,7 +374,7 @@ hr {
         right:0;
 
         border:1rem solid transparent;
-        border-right-color:$color-white;
+        border-right-color:#dedede;
         border-top-width: 0;
     }
 }

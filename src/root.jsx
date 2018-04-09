@@ -15,8 +15,8 @@ import Gospel from './containers/gospel'
 import FollowUp from './containers/follow-up'
 
 const Test = ({ match }) => (
-<div className='test-wrapper'>
-  <Link to='/' onClick={ () => confirm(`Are you sure you want to stop the test?`) } className="cancel mdi mdi-close"></Link>
+<div className='test'>
+  <Link to='/' className="cancel mdi mdi-close"></Link>
   <Route path={`${ match.url }/start`} component={Recognize} />
   <Route path={`${match.url}/what-about-you`} component={WhatAboutYou} />
   <Route path={`${match.url}/good-enough`} component={GoodEnough} />
@@ -31,7 +31,7 @@ const Test = ({ match }) => (
 
 export default ({ store }) => <Provider store={store} >
   <Router>
-    <div className="screen-wrapper">
+    <div className="wrapper">
       <Route exact path="/" component={Home} />
       <Route path="/follow-up" component={FollowUp} />
       <Route path="/test" component={Test} />

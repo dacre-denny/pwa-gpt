@@ -12,7 +12,7 @@ const Container = () =>
                 <br/>
                 Would you say these are good people?</p>
         </div>
-        <div className="expand scroll">
+        <div className="content scroll">
             <div className="grid-tiles">
                 <div style={{ 'backgroundImage':'url(/img/beiber.jpg)' }}></div>
                 <div style={{ 'backgroundImage':'url(/img/hitler.jpg)' }}></div>
