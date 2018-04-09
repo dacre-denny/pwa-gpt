@@ -30,9 +30,9 @@ const component = ({ test }) => (<div>
             All liars, shall have their part in the lake which burneth with fire and brimstone: which is the second death.<sub>Revelation 21:8</sub>
         </i>
         <h3>Justice must be served.</h3>
-        <p>There is punishment due for your sin - and it must be paid. There is good news though,</p>
+        <p>The penalty for your sin must be paid - either by you, or by someone else who is able. This is where the good news begins,</p>
         <p>
-            God provided a Way for you to be forgiven - and avoid the eternal penalty of sin. In other words,
+            God provided a Way for your sin to be paid for - this means that your sin can be forgiven. In other words,
         </p>
         <h3 className="emphasise"> God has thrown you a life line.
                 </h3>
@@ -76,7 +76,7 @@ const component = ({ test }) => (<div>
             <input type="text" />
             <label>Your phone or email</label>
             <input type="text" />
-            <button className="btn">Send</button>
+            <button className="btn">Contact me!</button>
         </form>
         <br/>
         <br/>

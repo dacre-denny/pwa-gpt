@@ -13,7 +13,7 @@ const component = ({ guiltyCount, endTest }) =>
             breaking His Law <b>on at least {guiltyCount} count{guiltyCount > 1 ? 's' : ''}</b>?
         </p>
         <hr />
-        <h3>If there was a way out of this mess, would you want to know?</h3>
+        <h3>If there was a way to get out of this mess, would you want to know?</h3>
         
         </div>
         <div className="footer btn-group">

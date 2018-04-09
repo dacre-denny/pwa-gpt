@@ -16,7 +16,9 @@ const component = ({ test, guiltyCount }) =>
                 What about you?
         </i>
             <p>
-                If you're found guilty of breaking God's moral law, do you think you would be going to Heaven, or to God's prision called Hell?
+                If you're found guilty of breaking God's moral law, should you go free? 
+                <br/>
+                <br/>If you are guilty, do you think you would be going to Heaven, or to God's prision called Hell?
         </p>
         </div>
         <div className="footer btn-group">

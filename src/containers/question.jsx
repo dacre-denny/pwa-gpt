@@ -11,7 +11,7 @@ const component = ({ number, percent, next, question, answer }) =>
             <h2>Question {number}</h2>
             <h3>{question.text}</h3>
         </div>
-        <div className="content scroll">
+        <div className="content scroll center">
             <img src={question.image} alt={question.text} />
         </div>
         <div className="footer btn-group">
