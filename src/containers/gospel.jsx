@@ -78,9 +78,6 @@ const component = ({ test }) => (<div>
             <input type="text" />
             <button className="btn">Contact me!</button>
         </form>
-        <br/>
-        <br/>
-        <Link to='/' className="btn">Start over</Link>
     </div>
 </div>)
 
