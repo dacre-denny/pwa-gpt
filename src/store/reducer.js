@@ -1,9 +1,9 @@
-import { getQuestions } from "../api";
+import * as API from "../api";
 
 const initial = {
   age: "child",
   phone_number: "",
-  test: getQuestions("child"),
+  test: API.getQuestions("child"),
   index: -1,
   form: {
     name: "",
@@ -13,23 +13,20 @@ const initial = {
 
 export default (state = initial, action) => {
   switch (action.type) {
-    case "SEND_FOLLOW_UP": {
-      let followUps = JSON.parse(localStorage.getItem("follow_ups") || "[]");
 
-      if (!Array.isArray(followUps)) {
-        followUps = [];
+    case "DELETE_FOLLOW_UP": {
+
+      API.removeFollowUp(action.id)
+
+      return {
+       ...state 
       }
+    }
 
-      const date = new Date();
-
-      followUps.push({
-        date: date.toDateString(),
-        name: state.form.name,
-        contact: state.form.contact
-      });
-
-      localStorage.setItem("follow_ups", JSON.stringify(followUps));
-
+    case "SEND_FOLLOW_UP": {
+      
+      API.addFollowUp(state.form.name, state.form.contact)
+      
       return {
         ...state,
         form: {
@@ -83,7 +80,7 @@ export default (state = initial, action) => {
     case "START_TEST": {
       return {
         ...state,
-        test: getQuestions(state.age),
+        test: API.getQuestions(state.age),
         index: 0
       };
     }

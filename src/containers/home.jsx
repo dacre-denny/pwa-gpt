@@ -6,6 +6,7 @@ import * as actions from '../store/actions'
 
 const component = ({ age, setTestChild, setTestTeenager, setTestAdult }) => (<div>
   <div className="content center">
+    
     <h1>The Good Person Test</h1>
     <h3>Are you good enough?</h3>
     <form>

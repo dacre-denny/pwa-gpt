@@ -1,3 +1,10 @@
+export function deleteFollowUp(id) {
+  return {
+    type: "DELETE_FOLLOW_UP",
+    id
+  };
+}
+
 export function sendFollowUp() {
   return {
     type: "SEND_FOLLOW_UP"
