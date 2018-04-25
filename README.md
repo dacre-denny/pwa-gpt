@@ -4,4 +4,4 @@
 
 *Are you good enough?*
 
-[Try it out on here](https://pwa-gpt.surge.sh/)
+[Try it out here](https://pwa-gpt.surge.sh/)
