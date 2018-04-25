@@ -7,7 +7,7 @@ import * as actions from '../store/actions'
 const onSendFollowUp = (dispatch, contact) => {
     dispatch(actions.sendFollowUp())
     alert('Your details have been saved - thanks for taking the test!')
-    dispatch(actions.restart())
+    dispatch(actions.endTest())
 }
 
 const component = ({ sendFollowUp, setName, setContact, contact, name }) => (<div>
