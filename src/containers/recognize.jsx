@@ -6,7 +6,7 @@ import * as actions from '../store/actions'
 
 const Container = () =>
     (<div>
-        <div>
+        <div className="header">
             <h1>Famous people</h1>
             <p>Do you recognize these people? 
                 <br/>

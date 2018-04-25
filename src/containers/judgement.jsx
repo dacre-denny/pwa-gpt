@@ -6,10 +6,12 @@ import * as actions from '../store/actions'
 
 const component = ({ test, guiltyCount }) =>
     (<div>
-        <h1>First, consider this;</h1>
-        <h3>
-            If someone breaks the law, should they go free?
-        </h3>
+        <div className="header">
+            <h1>First, consider this;</h1>
+            <h3>
+                If someone breaks the law, should they go free?
+            </h3>
+        </div>
         <div className="content scroll">
             <img className="align-center" src='/img/judgement.jpg' />
             <i className="emphasise">

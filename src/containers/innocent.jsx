@@ -6,7 +6,7 @@ import * as actions from '../store/actions'
 
 const component = ({ guiltyCount }) =>
     (<div>
-        <div>
+        <div className="header">
             <h1>The Good Judge</h1>
             <h3>Can a good judge let a criminal go free?</h3>
         </div>

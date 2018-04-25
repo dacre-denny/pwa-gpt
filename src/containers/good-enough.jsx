@@ -8,7 +8,7 @@ import * as actions from '../store/actions'
 
 const Container = ({ startTest, showStart }) =>
     (<div>
-        <div>
+        <div className="header">
             <h1>Are you good enough?</h1>
             <h3>Suppose there is a Heaven - do think you're good enough to go there when you die?</h3>
         </div>

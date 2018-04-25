@@ -4,7 +4,15 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import * as actions from '../store/actions'
 
-const component = ({ guiltyCount, endTest }) =>
+const onNotConcerned = (dispatch, event) => {
+    if (confirm("Are you really sure this doesn't concern you?")) {
+      dispatch(actions.endTest())
+    } else {
+      event.preventDefault();
+    }
+  };
+
+const component = ({ guiltyCount, onNotConcerned }) =>
     (<div>
         <div className="content center scroll">
             <h2>Does that concern you?</h2>
@@ -17,7 +25,7 @@ const component = ({ guiltyCount, endTest }) =>
         
         </div>
         <div className="footer btn-group">
-            <Link to={'/'} className="btn" onClick={() => endTest()}>No</Link>
+            <Link to={'/'} className="btn" onClick={ onNotConcerned }>No</Link>
             <Link to={'/test/gospel'} className="btn">Yes</Link>
         </div>
     </div>)
@@ -25,5 +33,5 @@ const component = ({ guiltyCount, endTest }) =>
 export default connect(state => ({
     guiltyCount: state.test.filter(({ guilty }) => guilty).length,
 }), dispatch => ({
-    endTest: () => dispatch(actions.endTest())
+    onNotConcerned: (event) => onNotConcerned(dispatch, event)
 }))(component)

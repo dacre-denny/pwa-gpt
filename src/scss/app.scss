@@ -31,14 +31,28 @@ h1 {
     margin: 1rem 0;
 }
 
+h2 {
+    
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 h3 {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 img {
     height: auto;
     width:100%;
+}
+
+p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.1rem;
 }
 
 .progress {
@@ -111,6 +125,11 @@ img {
         display: flex;
         flex-direction: column;
     }
+}
+
+.header {
+    padding:0.5rem;
+    padding-top: 3rem;
 }
 
 .content {
@@ -287,7 +306,7 @@ ol {
 
     label { 
         color: $color-white;
-        background:#1b233a;
+        background:#38254a;
         padding: 0.5rem;
         border-radius: 2rem;
         font-size: 1rem;

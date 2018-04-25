@@ -20,6 +20,7 @@ export function setField(key, value) {
 }
 
 export function restart() {
+  
   return {
     type: "RESTART"
   };

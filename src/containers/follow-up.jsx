@@ -7,7 +7,7 @@ import * as API from "../api";
 
 const component = ({ followUps, deleteFollowUp }) => (
   <div>
-    <div>
+    <div className="header">
       <Link to='/' className="tab-left tab-round">
         <i className="mdi mdi-arrow-left"></i>
       </Link>
@@ -15,7 +15,8 @@ const component = ({ followUps, deleteFollowUp }) => (
       <h3>Manage and contact follow ups from prior witnessing</h3>
     </div>
     <div className="content scroll"> 
-      <ul className="follow-up">
+      { followUps.length === 0 && <p className="emphasise">No follow up contacts to display</p> }
+      { followUps.length > 0 && <ul className="follow-up">
         {followUps.map(({ name, date, contact, id }) => (
           <li key={id}>
             <div>
@@ -27,6 +28,7 @@ const component = ({ followUps, deleteFollowUp }) => (
           </li>
         ))}
       </ul>
+      }
     </div>
   </div>
 );

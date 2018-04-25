@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Container = ({ startTest }) =>
     (<div>
-        <div>
+        <div className="header">
             <h1>What about you?</h1>
             <h3>Would you consider yourself to be a good person?</h3>
         </div>

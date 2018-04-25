@@ -27,7 +27,7 @@ const Summary = ({ test }) => (test.some(({ guilty }) => guilty) ?
 
 const Component = ({ test }) =>
     (<div>
-        <div>
+        <div className="header">
             <h2>The results are in,</h2>
             <p>..and here's what you said!</p>
         </div>

@@ -14,14 +14,26 @@ import Innocent from "./innocent";
 import Guilty from "./guilty";
 import Gospel from "./gospel";
 
+const onCancel = (dispatch, event) => {
+  if (confirm("Are you sure you want to end the test?")) {
+    dispatch(actions.restart());
+  } else {
+    event.preventDefault();
+  }
+};
+
 export default connect(
   state => ({}),
   dispatch => ({
-    restart: () => dispatch(actions.restart())
+    onCancel: (event) => onCancel(dispatch, event)
   })
-)(({ match, restart }) => (
+)(({ match, onCancel }) => (
   <div className="test">
-    <Link to="/" className="tab-right tab-round mdi mdi-close" onClick={() => restart()} />
+    <Link
+      to="/"
+      className="tab-right tab-round mdi mdi-close"
+      onClick={ onCancel }
+    />
     <Route path={`${match.url}/start`} component={Recognize} />
     <Route path={`${match.url}/what-about-you`} component={WhatAboutYou} />
     <Route path={`${match.url}/good-enough`} component={GoodEnough} />

@@ -6,7 +6,7 @@ import * as actions from '../store/actions'
 
 const component = ({ number, percent, next, question, answer }) =>
     (<div>
-        <div>
+        <div className="header">
             <div className="progress"><span style={{ width : (percent) + '%' }}></span></div>
             <h2>Question {number}</h2>
             <h3>{question.text}</h3>

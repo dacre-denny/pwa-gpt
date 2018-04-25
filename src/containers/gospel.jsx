@@ -6,17 +6,10 @@ import * as actions from '../store/actions'
 
 const component = ({ sendFollowUp, setName, setContact, contact, name }) => (<div>
 
-    <div>
+    <div className="header">
         <h1>The Gospel</h1>
     </div>
     <div className="content scroll">
-        <form>
-            <label>Your name</label>
-            <input type="text" value={ name } onChange={(event) => setName(event.target.value)} />
-            <label>Your phone or email</label>
-            <input type="text" value={ contact } onChange={(event) => setContact(event.target.value)}  />
-            <button className="btn" disabled={ !(name && contact) } onClick={ () => sendFollowUp() }>Contact me!</button>
-        </form>
         <h3>God's rescue plan to save sinners</h3>
         <p>
             We have all sinned and broken God's commandments in some way or another,
@@ -78,6 +71,13 @@ const component = ({ sendFollowUp, setName, setContact, contact, name }) => (<di
         </ol>
         <hr />
         <h3>Would you like to know more?</h3>
+        <form>
+            <label>Your name</label>
+            <input type="text" value={ name } onChange={(event) => setName(event.target.value)} />
+            <label>Your phone or email</label>
+            <input type="text" value={ contact } onChange={(event) => setContact(event.target.value)}  />
+            <button className="btn" disabled={ !(name && contact) } onClick={ () => sendFollowUp() }>Contact me</button>
+        </form>
     </div>
 </div>)
 
