@@ -8,8 +8,8 @@ import * as API from "../api";
 const component = ({ followUps, deleteFollowUp }) => (
   <div>
     <div>
-      <Link to="/" className="mdi mdi-back">
-        Home
+      <Link to='/' className="tab-left tab-round">
+        <i className="mdi mdi-arrow-left"></i>
       </Link>
       <h1>Follow Ups</h1>
       <h3>Manage and contact follow ups from prior witnessing</h3>

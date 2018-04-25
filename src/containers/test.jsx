@@ -21,7 +21,7 @@ export default connect(
   })
 )(({ match, restart }) => (
   <div className="test">
-    <Link to="/" className="cancel mdi mdi-close" onClick={() => restart()} />
+    <Link to="/" className="tab-right tab-round mdi mdi-close" onClick={() => restart()} />
     <Route path={`${match.url}/start`} component={Recognize} />
     <Route path={`${match.url}/what-about-you`} component={WhatAboutYou} />
     <Route path={`${match.url}/good-enough`} component={GoodEnough} />

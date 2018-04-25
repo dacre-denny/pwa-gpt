@@ -321,14 +321,44 @@ ol {
         background: #fff;
     }
 }
+ 
+.tab-round {
 
-.cancel {
+    background-color: $color-white;
+    color:$color-primary;
+    font-size: 1rem;
+    padding:0.5rem 0.5rem;
+    text-decoration:none;
+
+    i.mdi + span {
+        padding-left: 0.5rem;
+    }
+
+    span {
+        font-size: 0.85rem;
+        margin-bottom: 0.1rem;
+        padding-right: .5rem;
+        position: relative;
+        top: -1px;
+    }
+}
+
+.tab-left {
+    position: fixed;
+    top: .5rem;
+    left: .5rem;
+    // font-size: 1.5rem;
+    line-height: 1; 
+    border-radius: 3rem;
+    z-index: 1000;
+}
+
+.tab-right {
     position: fixed;
     top: .5rem;
     right: .5rem;
-    font-size: 1.5rem;
-    line-height: 1;
-    color: $color-white;
+    // font-size: 1.5rem;
+    line-height: 1; 
     border-radius: 3rem;
     z-index: 1000;
 }
