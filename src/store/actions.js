@@ -19,13 +19,6 @@ export function setField(key, value) {
   };
 }
 
-export function restart() {
-  
-  return {
-    type: "RESTART"
-  };
-}
-
 export function setTestAge(age) {
   return {
     type: "SET_AGE_RANGE",
@@ -38,6 +31,7 @@ export function startTest() {
     type: "START_TEST"
   };
 }
+
 export function endTest() {
   return {
     type: "END_TEST"

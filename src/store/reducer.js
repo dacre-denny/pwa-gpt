@@ -49,19 +49,6 @@ export default (state = initial, action) => {
       };
     }
 
-    case "RESTART": {
-      return {
-        age: "child",
-        phone_number: "",
-        test: [],
-        index: -1,
-        form: {
-          name: "",
-          contact: ""
-        }
-      };
-    }
-
     case "SET_AGE_RANGE": {
       return {
         ...state,
@@ -72,8 +59,14 @@ export default (state = initial, action) => {
     case "END_TEST": {
       return {
         ...state,
+        age: "child",
+        phone_number: "",
         test: [],
-        index: -1
+        index: -1,
+        form: {
+          name: "",
+          contact: ""
+        }
       };
     }
 

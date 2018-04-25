@@ -16,7 +16,7 @@ import Gospel from "./gospel";
 
 const onCancel = (dispatch, event) => {
   if (confirm("Are you sure you want to end the test?")) {
-    dispatch(actions.restart());
+    dispatch(actions.endTest());
   } else {
     event.preventDefault();
   }
