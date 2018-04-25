@@ -78,6 +78,7 @@ const component = ({ sendFollowUp, setName, setContact, contact, name }) => (<di
             <input type="text" value={ contact } onChange={(event) => setContact(event.target.value)}  />
             <button className="btn" disabled={ !(name && contact) } onClick={ () => sendFollowUp() }>Contact me</button>
         </form>
+        
     </div>
 </div>)
 

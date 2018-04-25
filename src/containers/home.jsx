@@ -12,7 +12,7 @@ const component = ({ age, setTestChild, setTestTeenager, setTestAdult }) => (<di
     <h1>The Good Person Test</h1>
     <h3>Are you good enough?</h3>
     <form>
-      <label>Start the test for</label>
+      <label>Start the test for:</label>
       <div className="radio-group">
           <input name="age" id="age-child" type="radio" defaultChecked={age === 'child'} onClick={() => setTestChild()} />
           <label htmlFor="age-child">Child</label>
