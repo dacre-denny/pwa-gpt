@@ -7,7 +7,7 @@ import * as actions from '../store/actions'
 const component = ({ age, setTestChild, setTestTeenager, setTestAdult }) => (<div>
   <div className="content center">
     <Link to='/follow-up' className="tab-left tab-round">
-      <i className="mdi mdi-contact-mail"></i><span>See Follow Ups</span>
+      <i className="mdi mdi-contact-mail"></i><span>Manage Follow Ups</span>
     </Link>
     <h1>The Good Person Test</h1>
     <h3>Are you good enough?</h3>

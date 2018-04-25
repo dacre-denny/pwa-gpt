@@ -4,6 +4,12 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import * as actions from '../store/actions'
 
+const onSendFollowUp = (dispatch, contact) => {
+    dispatch(actions.sendFollowUp())
+    alert('Your details have been saved - thanks for taking the test!')
+    dispatch(actions.restart())
+}
+
 const component = ({ sendFollowUp, setName, setContact, contact, name }) => (<div>
 
     <div className="header">
@@ -76,9 +82,11 @@ const component = ({ sendFollowUp, setName, setContact, contact, name }) => (<di
             <input type="text" value={ name } onChange={(event) => setName(event.target.value)} />
             <label>Your phone or email</label>
             <input type="text" value={ contact } onChange={(event) => setContact(event.target.value)}  />
-            <button className="btn" disabled={ !(name && contact) } onClick={ () => sendFollowUp() }>Contact me</button>
+            <Link to="/" className={"btn " + (!(name && contact) && 'disabled') } onClick={ (event) => {
+                if(!(name && contact)) {event.preventDefault()}
+                else {sendFollowUp(contact)}} }>Contact me</Link>
         </form>
-        
+
     </div>
 </div>)
 
@@ -89,5 +97,5 @@ export default connect(state => ({
     answer: (answer) => dispatch(actions.answerJudgement(question, answer)),
     setName: (name) => dispatch(actions.setField('name', name)),
     setContact: (contact) => dispatch(actions.setField('contact', contact)),
-    sendFollowUp: (contact) => dispatch(actions.sendFollowUp()),
+    sendFollowUp: (contact) => onSendFollowUp(dispatch, contact),
 }))(component)

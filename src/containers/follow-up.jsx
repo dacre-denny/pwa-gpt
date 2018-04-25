@@ -15,7 +15,7 @@ const component = ({ followUps, deleteFollowUp }) => (
       <h3>Manage and contact follow ups from prior witnessing</h3>
     </div>
     <div className="content scroll"> 
-      { followUps.length === 0 && <p className="emphasise">No follow up contacts to display</p> }
+      { followUps.length === 0 && <p className="emphasise">No follow up contact details saved</p> }
       { followUps.length > 0 && <ul className="follow-up">
         {followUps.map(({ name, date, contact, id }) => (
           <li key={id}>

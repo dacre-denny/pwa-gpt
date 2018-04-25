@@ -335,6 +335,7 @@ ol {
         background: lighten($color-secondary, 10.125%);
     }
 
+    &.disabled ,
     &:disabled {
         opacity: 0.25;
         background: #fff;
