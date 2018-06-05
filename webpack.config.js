@@ -43,6 +43,7 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './*.html' },
       { from: './src/img/**.*', to : './img/[name].[ext]' },
+      { from: './src/manifest.json', to : './manifest.json' },
     ], {
       debug : 'info'
     }),
