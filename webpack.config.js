@@ -41,9 +41,9 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: './*.html' },
+      { from: './src/index.html' },
       { from: './src/img/**.*', to : './img/[name].[ext]' },
-      { from: './src/manifest.json', to : './manifest.json' },
+      { from: './src/manifest.json' },
     ], {
       debug : 'info'
     }),
