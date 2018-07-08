@@ -60,7 +60,7 @@ module.exports = {
           'src' : '', 
           'dist' : ''
         },
-        minify: true,
+        minify: !true,
         navigateFallback: PUBLIC_PATH + 'index.html',
         staticFileGlobsIgnorePatterns: [/\.map$/],
       }
