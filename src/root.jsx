@@ -10,9 +10,9 @@ export default ({ store }) => (
   <Provider store={store}>
     <HashRouter basename="/">
       <div className="wrapper">
+        <Route exact path="/" component={Home} />
         <Route path="/follow-up" component={FollowUp} />
         <Route path="/test" component={Test} />
-        <Route path="/home" component={Home} />
       </div>
     </HashRouter>
   </Provider>

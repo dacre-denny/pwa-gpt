@@ -2,7 +2,7 @@ var path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
-const PUBLIC_PATH = '/';//'https://www.my-project-name.com/';  // webpack needs the trailing slash for output.publicPath
+const PUBLIC_PATH = 'https://pwa-gpt.surge.sh/';
  
 module.exports = {
   entry: [
@@ -59,6 +59,8 @@ module.exports = {
           'src/css/**.*',
           'src/fonts/**.*',
           'dist/bundle.js',
+          'dist/manifest.json',
+          'dist/index.html',
         ],
         stripPrefixMulti:{ 
           'src' : '', 
