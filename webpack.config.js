@@ -43,6 +43,8 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './src/index.html' },
       { from: './src/img/**.*', to : './img/[name].[ext]' },
+      { from: './src/css/**.*', to : './css/[name].[ext]' },
+      { from: './src/fonts/**.*', to : './fonts/[name].[ext]' },
       { from: './src/manifest.json' },
     ], {
       debug : 'info'
@@ -54,6 +56,8 @@ module.exports = {
         filename: 'service-worker.js',
         staticFileGlobs: [
           'src/img/**.*',
+          'src/css/**.*',
+          'src/fonts/**.*',
           'dist/bundle.js',
         ],
         stripPrefixMulti:{ 
