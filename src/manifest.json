@@ -22,5 +22,5 @@
   "background_color": "#030f2f",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": "/index.html"
+  "start_url": "https://pwa-gpt.surge.sh/index.html"
 }

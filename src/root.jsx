@@ -12,7 +12,7 @@ export default ({ store }) => (
       <div className="wrapper">
         <Route path="/follow-up" component={FollowUp} />
         <Route path="/test" component={Test} />
-        <Route path="*" component={Home} />
+        <Route path="/home" component={Home} />
       </div>
     </HashRouter>
   </Provider>

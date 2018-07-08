@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/materialdesignicons.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function() {
+        navigator.serviceWorker.register("/service-worker.js").then(
+          function(registration) {
+            console.log("Service worker registered.");
+          },
+          function(err) {
+            console.error("Service worker failed to register", err);
+          }
+        );
+      });
+    }
+    </script>
   </head>
   <body>
     <div id="app"></div>

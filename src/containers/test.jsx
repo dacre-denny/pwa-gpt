@@ -30,7 +30,7 @@ export default connect(
 )(({ match, onCancel }) => (
   <div className="test">
     <Link
-      to="/"
+      to="/home"
       className="tab-right tab-round mdi mdi-close"
       onClick={ onCancel }
     />

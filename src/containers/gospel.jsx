@@ -82,7 +82,7 @@ const component = ({ sendFollowUp, setName, setContact, contact, name }) => (<di
             <input type="text" value={ name } onChange={(event) => setName(event.target.value)} />
             <label>Your phone or email</label>
             <input type="text" value={ contact } onChange={(event) => setContact(event.target.value)}  />
-            <Link to="/" className={"btn " + (!(name && contact) && 'disabled') } onClick={ (event) => {
+            <Link to="/home" className={"btn " + (!(name && contact) && 'disabled') } onClick={ (event) => {
                 if(!(name && contact)) {event.preventDefault()}
                 else {sendFollowUp(contact)}} }>Contact me</Link>
         </form>
