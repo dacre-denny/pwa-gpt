@@ -1,3 +1,4 @@
+import 'jsdom-global/register'
 var assert = require('chai').assert;
 
 import * as API from "../src/api";
@@ -56,6 +57,23 @@ describe('The API module', function() {
         return image.match(/^\/img\/child-\w+.jpg$/gi) && !!text && guilty === false
       }))
 
+    });
+  });
+
+  describe('The getFollowUps method', function() {
+
+    it('should return empty array when no follow ups in local storage', function() {
+ 
+      window.localStorage = {
+        getItem : function(key) {
+          return undefined
+        }
+      }
+
+      const followUps = API.getFollowUps();
+
+      assert.isArray(followUps)
+      assert.isEmpty(followUps)
     });
   });
 });

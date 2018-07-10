@@ -86,7 +86,8 @@ export const getQuestions = age => {
  * Returns all follow up records
  */
 export const getFollowUps = () => {
-  const followUps = JSON.parse(localStorage.getItem("follow_ups") || "[]");
+  
+  const followUps = JSON.parse(window.localStorage.getItem("follow_ups") || "[]");
 
   if (Array.isArray(followUps)) {
     return followUps;
@@ -114,7 +115,7 @@ export const addFollowUp = (name, contact) => {
 
   followUps.splice(0, 0, followUp);
 
-  localStorage.setItem("follow_ups", JSON.stringify(followUps));
+  window.localStorage.setItem("follow_ups", JSON.stringify(followUps));
 };
 
 /**
@@ -126,5 +127,5 @@ export const removeFollowUp = id => {
 
   const followUps = getFollowUps().filter(item => item.id !== id);
 
-  localStorage.setItem("follow_ups", JSON.stringify(followUps));
+  window.localStorage.setItem("follow_ups", JSON.stringify(followUps));
 };
