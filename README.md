@@ -1,6 +1,6 @@
-# pwa-gpt
+# The Good Person Test. 
 
-## The Good Person Test. 
+![build](https://api.travis-ci.org/dacredenny/pwa-gpt.svg?branch=master)
 
 *Are you good enough?*
 
